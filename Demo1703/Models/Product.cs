@@ -19,6 +19,8 @@ public partial class Product
     public virtual ICollection<PartnersProduct> PartnersProducts { get; set; } = new List<PartnersProduct>();
 
     public virtual ProductType TypeNavigation { get; set; } = null!;
+    
+    //Список партнёров товара
     public string PartnerNames
     {
         get
@@ -26,6 +28,8 @@ public partial class Product
             return string.Join(", ", PartnersProducts.Select(p => p.PartnerNavigation.Name));
         }
     }
+    
+    //В зависимости от количества проданой (с начала 2024 года) продуктции, товар окрашивается в определённый цвет
     public string ItemColor
     {
         get

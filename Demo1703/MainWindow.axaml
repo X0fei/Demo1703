@@ -14,9 +14,10 @@
 		Margin="10">
 		<Button
 			DockPanel.Dock="Top"
-			Content="Добавить товар"
+			Content="+"
 		    Background="#67BA80"
-			Margin="0 0 0 10"/>
+			Margin="0 0 0 10"
+			ToolTip.Tip="Добавить товар"/>
 		<StackPanel>
 			<ListBox
 				Name="ProductListBox"
