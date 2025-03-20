@@ -21,13 +21,16 @@
 			<ListBox
 				Name="ProductListBox"
 				Background="#F4E8D3"
-				Height="390">
+				Height="390"
+				BorderBrush="Black"
+				BorderThickness="1">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
 						<Border
 							Padding="5"
 							BorderBrush="Black"
-							BorderThickness="1">
+							BorderThickness="1"
+							Background="{Binding ItemColor}">
 							<DockPanel>
 								<TextBlock
 									Text="{Binding Article}"
@@ -38,18 +41,13 @@
 									DockPanel.Dock="Bottom"
 									Orientation="Horizontal">
 									<TextBlock
-										Text="Есть у следующих партнёров:"
+										Text="Есть у следующих партнёров: "
 										FontFamily="Seggoe UI"/>
-									<ListBox
-										ItemsSource="{Binding displayList}">
-										<ListBox.ItemTemplate>
-											<DataTemplate>
-												<TextBlock
-													Text="{Binding PartnersProducts.Partner}"
-													FontFamily="Seggoe UI"/>
-											</DataTemplate>
-										</ListBox.ItemTemplate>
-									</ListBox>
+									<TextBlock
+										Text="{Binding PartnerNames}"
+										FontFamily="Seggoe UI"
+										TextWrapping="Wrap"
+										MaxWidth="300"/>
 								</StackPanel>
 								<StackPanel>
 									<TextBlock
