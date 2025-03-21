@@ -2,8 +2,72 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
         x:Class="Demo1703.MainWindow"
-        Title="Demo1703">
-    Welcome to Avalonia!
+		x:CompileBindings="False"
+        Title="Мастер Пол — Главная"
+		Icon="/Assets/icon.ico"
+		Width="600" Height="450"
+		MinWidth="600" MinHeight="450"
+		WindowStartupLocation="CenterScreen">
+	<DockPanel
+		Margin="10">
+		<Button
+			Click="AddProductButton_Click"
+			DockPanel.Dock="Top"
+			Content="+"
+		    Background="#67BA80"
+			Margin="0 0 0 10"
+			ToolTip.Tip="Добавить товар"
+			FontFamily="Seggoe UI"/>
+		<StackPanel>
+			<ListBox
+				Name="ProductListBox"
+				Background="#F4E8D3"
+				Height="390"
+				BorderBrush="Black"
+				BorderThickness="1">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Border
+							Padding="5"
+							BorderBrush="Black"
+							BorderThickness="1"
+							Background="{Binding ItemColor}">
+							<DockPanel>
+								<TextBlock
+									Text="{Binding Article}"
+									DockPanel.Dock="Top"
+									HorizontalAlignment="Right"
+									FontFamily="Seggoe UI"/>
+								<StackPanel
+									DockPanel.Dock="Bottom"
+									Orientation="Horizontal">
+									<TextBlock
+										Text="Есть у следующих партнёров: "
+										FontFamily="Seggoe UI"/>
+									<TextBlock
+										Text="{Binding PartnerNames}"
+										FontFamily="Seggoe UI"
+										TextWrapping="Wrap"
+										MaxWidth="300"/>
+								</StackPanel>
+								<StackPanel>
+									<TextBlock
+										Text="{Binding Name}"
+										FontFamily="Seggoe UI"/>
+									<TextBlock
+										Text="{Binding TypeNavigation.Name}"
+										FontFamily="Seggoe UI"/>
+									<TextBlock
+										Text="{Binding TypeNavigation.Coefficient}"
+										FontFamily="Seggoe UI"/>
+								</StackPanel>
+							</DockPanel>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</StackPanel>
+	</DockPanel>
 </Window>
