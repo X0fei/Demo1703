@@ -15,11 +15,18 @@
 		<Button
 			Click="AddProductButton_Click"
 			DockPanel.Dock="Top"
-			Content="+"
 		    Background="#67BA80"
 			Margin="0 0 0 10"
 			ToolTip.Tip="Добавить товар"
-			FontFamily="Seggoe UI"/>
+			FontFamily="Seggoe UI"
+			Width="35"
+			Height="35"
+			HorizontalAlignment="Right">
+			<TextBlock
+				Text="+"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"/>
+		</Button>
 		<StackPanel>
 			<ListBox
 				Name="ProductListBox"

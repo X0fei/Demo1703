@@ -78,4 +78,11 @@ public partial class AddEditProductWindow : Window
 
         }
     }
+
+    private void GoBackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        MainWindow mainWindow = new MainWindow();
+        mainWindow.Show();
+        Close();
+    }
 }
