@@ -13,11 +13,13 @@
 	<DockPanel
 		Margin="10">
 		<Button
+			Click="AddProductButton_Click"
 			DockPanel.Dock="Top"
 			Content="+"
 		    Background="#67BA80"
 			Margin="0 0 0 10"
-			ToolTip.Tip="Добавить товар"/>
+			ToolTip.Tip="Добавить товар"
+			FontFamily="Seggoe UI"/>
 		<StackPanel>
 			<ListBox
 				Name="ProductListBox"

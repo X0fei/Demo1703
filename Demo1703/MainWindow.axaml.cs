@@ -12,4 +12,11 @@ public partial class MainWindow : Window
         InitializeComponent();
         ProductListBox.ItemsSource = displayList;
     }
+
+    private void AddProductButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        AddEditProductWindow addEditProductWindow = new AddEditProductWindow();
+        addEditProductWindow.Show();
+        Close();
+    }
 }

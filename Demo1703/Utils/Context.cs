@@ -17,5 +17,6 @@ namespace Demo1703.Utils
             .Include(product => product.PartnersProducts)];
         public static List<Partner> partners { get; set; } = [.. DbContext.Partners
             .Include(partner => partner.PartnersProducts)];
+        public static List<ProductType> productTypes { get; set; } = [.. DbContext.ProductTypes];
     }
 }
