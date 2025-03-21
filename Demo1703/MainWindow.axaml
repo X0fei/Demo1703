@@ -12,21 +12,33 @@
 		WindowStartupLocation="CenterScreen">
 	<DockPanel
 		Margin="10">
-		<Button
-			Click="AddProductButton_Click"
+		<Grid
+			RowDefinitions="Auto"
+			ColumnDefinitions="* *"
 			DockPanel.Dock="Top"
-		    Background="#67BA80"
-			Margin="0 0 0 10"
-			ToolTip.Tip="Добавить товар"
-			FontFamily="Seggoe UI"
-			Width="35"
-			Height="35"
-			HorizontalAlignment="Right">
+			Margin="0 0 0 10">
 			<TextBlock
-				Text="+"
-				HorizontalAlignment="Center"
-				VerticalAlignment="Center"/>
-		</Button>
+				Text="Список товаров"
+				Grid.Column="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Center"
+				FontSize="30"
+				FontWeight="SemiBold"/>
+			<Button
+				Click="AddProductButton_Click"
+				Background="#67BA80"
+				FontFamily="Seggoe UI"
+				Grid.Column="1"
+				HorizontalAlignment="Right"
+				Width="35"
+				Height="35"
+				ToolTip.Tip="Добавить товар">
+				<TextBlock
+					Text="+"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center"/>
+			</Button>
+		</Grid>
 		<StackPanel>
 			<ListBox
 				Name="ProductListBox"
