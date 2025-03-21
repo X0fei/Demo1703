@@ -13,6 +13,21 @@
 	<DockPanel
 		Margin="10">
 		<Button
+			Name="GoBack"
+			Background="#67BA80"
+			HorizontalAlignment="Left"
+			DockPanel.Dock="Top"
+			Click="GoBackButton_Click"
+			ToolTip.Tip="Назад"
+			FontFamily="Seggoe UI"
+			Width="35"
+			Height="35">
+			<TextBlock
+				Text="&lt;"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"/>
+		</Button>
+		<Button
 			Name="AddEditProductButton"
 			Content="Добавить/редактировать товар"
 			Background="#67BA80"
