@@ -58,25 +58,31 @@ public partial class AddEditProductWindow : Window
             TypeComboBox.SelectedIndex != -1 && 
             MinimalCost.Value != null)
         {
-            Product product = new Product()
-            {
-                Article = Article.Text,
-                Name = Name.Text,
-                Type = TypeComboBox.SelectedIndex + 1,
-                MinimalCost = (decimal)MinimalCost.Value
-            };
+            AddProduct();
 
-            using (var context = new User18Context())
-            {
-                context.Add(product);
-                context.SaveChanges();
-            }
-
-            Utils.Context.products = new List<Product>(Utils.Context.DbContext.Products);
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
         }
+    }
+
+    private void AddProduct()
+    {
+        Product product = new Product()
+        {
+            Article = Article.Text,
+            Name = Name.Text,
+            Type = TypeComboBox.SelectedIndex + 1,
+            MinimalCost = (decimal)MinimalCost.Value
+        };
+
+        using (var context = new User18Context())
+        {
+            context.Add(product);
+            context.SaveChanges();
+        }
+
+        Utils.Context.products = new List<Product>(Utils.Context.DbContext.Products);
     }
 
     private void GoBackButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
